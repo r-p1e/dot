@@ -18,11 +18,6 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
@@ -43,14 +38,13 @@ values."
               haskell-enable-ghc-mod-support nil
               haskell-process-type 'stack-ghci
               haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero")
-              hindent-style "johan-tibell"
+              haskell-enable-hindent-style "johan-tibell"
               haskell-stylish-on-save t)
      python
      (latex :variables
             latex-build-command "LaTeX"
             latex-enable-auto-fill t
             latex-enable-folding t)
-     (c-c++ :variables c-c++-enable-clang-support t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -112,6 +106,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(zenburn
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -124,7 +119,7 @@ values."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
                                :size 13
-                               :weight semi-light
+                               :weight normal
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -265,7 +260,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
-you should place you code here."
+you should place your code here."
 
   ;; Global mode
   ;; (global-linum-mode)
@@ -312,7 +307,7 @@ you should place you code here."
     (haskell-interactive-switch-back)
       )
   )
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
