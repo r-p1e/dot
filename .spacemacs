@@ -45,6 +45,7 @@ values."
             latex-build-command "LaTeX"
             latex-enable-auto-fill t
             latex-enable-folding t)
+     dockerfile
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -290,7 +291,7 @@ you should place your code here."
     "I"  'haskell-do-info
     "g"  'intero-goto-definition
     )
-  
+
 
 (defun haskell-do-info (cPos cEnd)
   "Bring repl and do :info under the current cursor word"
